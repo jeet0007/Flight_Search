@@ -11,6 +11,8 @@ public class Flight {
 	Passenger[] passengerList;
 	double price;
 	String date;
+	int flightDuration;
+	boolean visited;
 
 	public Flight(Airport location, String airlines, String flightNumber, String departureTime, String arivalTime,
 			double price, String date) {
@@ -21,8 +23,13 @@ public class Flight {
 		this.arivalTime = arivalTime;
 		this.numOfSeats = 300;
 		this.price = price;
+		this.visited = false;
 		this.passengerList = new Passenger[numOfSeats];
 		this.date = date;
+		this.flightDuration = (Integer.parseInt(arivalTime.substring(0, 1)) *60)+ Integer.parseInt(arivalTime.substring(3,4))-
+				(Integer.parseInt(departureTime.substring(0, 1)) *60)+ Integer.parseInt(departureTime.substring(3,4));
+		
+		
 	}
 
 	public boolean book(Passenger passenger) {
@@ -37,7 +44,7 @@ public class Flight {
 
 	@Override
 	public String toString() {
-		return String.format("%-20s%-10s%10s\t%s-->%s%10.2f฿%10d", airlines, flightNumber, date, departureTime,
+		return String.format("%-20s%-13s%15s\t%s-->%s%10.2f฿%15d", airlines, flightNumber, date, departureTime,
 				arivalTime, price, numOfSeats);
 
 	}

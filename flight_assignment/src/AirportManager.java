@@ -129,14 +129,14 @@ public class AirportManager {
 		return myLocation;
 	}
 
-	public void setLocation(String location) {
-
+	public boolean setLocation(String location) {
 		for (int i = 0; i < airports.length; i++) {
 			if (airports[i].name.equalsIgnoreCase(location)) {
 				this.myLocation = airports[i];
-				break;
+				return true;
 			}
 		}
+		return false;
 
 	}
 
@@ -149,6 +149,8 @@ public class AirportManager {
 	public void book(Scanner scan) {
 		System.out.print("TO: ");
 		String to = scan.nextLine();
+		System.out.format("%-20s%-13s%15s\t%-15s%-15s%10s", "Airlines", "Flight Number", "Date", "Timings", "Price"," Seats Available");
+		System.out.println();
 		this.printto(to);
 
 		System.out.print("Enter the number to choose the flight : ");
@@ -176,7 +178,10 @@ public class AirportManager {
 		String name = scan.nextLine();
 		
 		Flight[] flights = this.myLocation.flights;
-
+		
+		System.out.format("%-20s%-13s%15s\t%-15s%-15s%10s", "Airlines", "Flight Number", "Date", "Timings", "Price"," Seats Available");
+		System.out.println();
+		
 		for (int i = 0; i < this.myLocation.flightCount(); i++) {
 			if(flights[i].findPassenger(name)) {
 				System.out.println(flights[i].toString());
