@@ -1,4 +1,4 @@
-package flight_Assignment;
+
 
 public class Passenger {
 	String name;

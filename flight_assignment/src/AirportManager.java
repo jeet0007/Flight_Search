@@ -1,4 +1,4 @@
-package flight_Assignment;
+
 
 import java.util.Scanner;
 

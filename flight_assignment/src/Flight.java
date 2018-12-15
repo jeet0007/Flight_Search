@@ -1,4 +1,4 @@
-package flight_Assignment;
+
 
 
 public class Flight {
@@ -37,7 +37,7 @@ public class Flight {
 
 	@Override
 	public String toString() {
-		return String.format("%-10s%-10s%10s\t%s-->%s%10.2f฿%10d", airlines, flightNumber, date, departureTime,
+		return String.format("%-20s%-10s%10s\t%s-->%s%10.2f฿%10d", airlines, flightNumber, date, departureTime,
 				arivalTime, price, numOfSeats);
 
 	}
