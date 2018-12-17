@@ -153,9 +153,9 @@ public class AirportManager {
 			System.out.print(" ");
 			this.printto(to);
 			for (int i = 0; i < flights.length; i++) {
-				if (flights[i].location.CheckflightsTo(to)) {
+				if (flights[i].location.CheckflightsTo(to)) {	
 					System.out.println(" "+(i + 1) + " " + flights[i].toString());
-
+					
 					System.out.print("*");
 					flights[i].location.flightsTo(to);
 				}
@@ -186,7 +186,6 @@ public class AirportManager {
  
 					var locF = flights[choise].location;
 					if (locF.flights[i].location.name.equalsIgnoreCase(to)) {
-						locF.flights[i].book(n);
 						if(locF.flights[i].book(n)) {
 							System.out.println("Your Transit Flight has successfully been booked have a nice day.");
 						}else {
@@ -215,7 +214,7 @@ public class AirportManager {
 				
 			}else {
 				Passenger temo = flights[i].findPassenger(name);
-				temo.printBookings();
+				temo.printBookings(); 
 			}
 		}
 	}

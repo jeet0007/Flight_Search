@@ -44,22 +44,21 @@ public class Passenger {
 	
 	public boolean addFlight(Flight flight) {
 		
-		for (Flight x : this.bookings) {
-			if(x==null) {
-				x = flight;
+		for (int i = 0; i < bookings.length; i++) {
+			if(bookings[i]==null) {
+				bookings[i] = flight;
+				
 				return true;
-			}else {
-				System.out.println();
 			}
-			
-			
 		}
 		return false;
 	}
 	
 	public void printBookings() {
-		for (Flight flight : bookings) {
-			flight.toString();
+		for (int i = 0; i < bookings.length; i++) {
+			if (bookings[i] != null) {
+				System.out.println(bookings[i].toString());
+			}
 		}
 	}
 
