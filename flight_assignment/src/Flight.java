@@ -1,7 +1,7 @@
 
 
 
-public class Flight {
+public class Flight { 
 	Airport location;
 	String airlines;
 	String flightNumber;
@@ -26,6 +26,7 @@ public class Flight {
 		this.visited = false;
 		this.passengerList = new Passenger[numOfSeats];
 		this.date = date;
+		
 		this.flightDuration = (Integer.parseInt(arivalTime.substring(0, 1)) *60)+ Integer.parseInt(arivalTime.substring(3,4))-
 				(Integer.parseInt(departureTime.substring(0, 1)) *60)+ Integer.parseInt(departureTime.substring(3,4));
 		
@@ -36,6 +37,7 @@ public class Flight {
 		if (numOfSeats > 0) {
 			numOfSeats--;
 			addPassenger(passenger);
+			passenger.addFlight(this);
 			return true;
 		} else {
 			return false;
@@ -62,15 +64,15 @@ public class Flight {
 		}
 	}
 
-	public boolean findPassenger(String name) {
+	public Passenger findPassenger(String name) {
 		for (int i = 0; i < passengerList.length; i++) {
 			if (passengerList[i] != null) {
 				if (passengerList[i].name.equals(name)) {
-					return true;
+					return passengerList[i];
 				}
 			}
 		}
-		return false;
+		return null;
 	}
 
 	public Airport getLocation() {

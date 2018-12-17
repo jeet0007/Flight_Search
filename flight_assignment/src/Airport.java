@@ -9,6 +9,7 @@ public class Airport {
 	public Airport(String name){
 		flights = new Flight[8];
 		this.name = name;
+	
 	}
 	
 	public void addFlight(Airport location,String airlines,String flightNumber, String departureTime, String arivalTime, double price,
@@ -34,12 +35,26 @@ public class Airport {
 		}
 	}
 	
-	public void flightsTo(String to) {
+	public boolean flightsTo(String to) {
 		for (int i = 0; i < flightCount(); i++) {
 			if(flights[i].location.name.equalsIgnoreCase(to)) {
+				
 				System.out.println((i+1)+" "+flights[i].toString());
-			}
+				return true;
+			} 
 		}
+		return false;
+	}
+	
+	public boolean CheckflightsTo(String to) {
+		for (int i = 0; i < flightCount(); i++) {
+			if(flights[i].location.name.equalsIgnoreCase(to)) {
+				
+				
+				return true;
+			} 
+		}
+		return false;
 	}
 	
 	public int flightCount() {
