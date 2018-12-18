@@ -146,7 +146,7 @@ public class AirportManager {
 			System.out.println();
 			this.printto(to);
 		} else {
-			var flights = myLocation.flights;
+			Flight[] flights = myLocation.flights;
 			System.out.format("%-20s%-13s%15s\t%-15s%-15s%10s", "Airlines", "Flight Number", "Date", "Timings", "Price"," Seats Available");
 			System.out.println();
 
@@ -181,10 +181,10 @@ public class AirportManager {
 			if(myLocation.flights[choise].location.name.equalsIgnoreCase(to)) {
 				
 			}else {
-				var flights = myLocation.flights;
+				Flight[] flights = myLocation.flights;
 				for (int i = 0; i < flights[choise].location.flights.length; i++) {
  
-					var locF = flights[choise].location;
+					Airport locF = flights[choise].location;
 					if (locF.flights[i].location.name.equalsIgnoreCase(to)) {
 						if(locF.flights[i].book(n)) {
 							System.out.println("Your Transit Flight has successfully been booked have a nice day.");
