@@ -26,7 +26,7 @@ public class Airport {
 	}
 
 	public void  printFlight() {
-		System.out.format("%-20s%-13s%15s\t%-15s%-15s%10s", "Airlines", "Flight Number", "Date", "Timings", "Price"," Seats Available");
+		System.out.format("%-20s%-20s%-13s%15s\t%-15s%-15s%10s","Destination", "Airlines", "Flight Number", "Date", "Timings", "Price"," Seats Available");
 		System.out.println();
 		for (int i = 0; i < flightCount(); i++) {
 			if(flights[i]!=null) {

@@ -142,12 +142,12 @@ public class AirportManager {
 		System.out.println("Which kind of flight would you like?\n1)Direct Flight\n2)With Transit");
 		String temp = scan.nextLine();
 		if (temp.equals("1")) {
-			System.out.format("%-20s%-13s%15s\t%-15s%-15s%10s", "Airlines", "Flight Number", "Date", "Timings", "Price"," Seats Available");
+			System.out.format("%-20s%-20s%-13s%15s\t%-15s%-15s%10s","Destination", "Airlines", "Flight Number", "Date", "Timings", "Price"," Seats Available");
 			System.out.println();
 			this.printto(to);
 		} else {
 			Flight[] flights = myLocation.flights;
-			System.out.format("%-20s%-13s%15s\t%-15s%-15s%10s", "Airlines", "Flight Number", "Date", "Timings", "Price"," Seats Available");
+			System.out.format("%-20s%-20s%-13s%15s\t%-15s%-15s%10s","Destination", "Airlines", "Flight Number", "Date", "Timings", "Price"," Seats Available");
 			System.out.println();
 
 			System.out.print(" ");
@@ -205,8 +205,7 @@ public class AirportManager {
 
 		Flight[] flights = this.myLocation.flights;
 
-		System.out.format("%-20s%-13s%15s\t%-15s%-15s%10s", "Airlines", "Flight Number", "Date", "Timings", "Price",
-				" Seats Available");
+		System.out.format("%-20s%-20s%-13s%15s\t%-15s%-15s%10s","Destination", "Airlines", "Flight Number", "Date", "Timings", "Price"," Seats Available");
 		System.out.println();
 
 		for (int i = 0; i < this.myLocation.flightCount(); i++) {

@@ -46,7 +46,7 @@ public class Flight {
 
 	@Override
 	public String toString() {
-		return String.format("%-20s%-13s%15s\t%s-->%s%10.2f฿%15d", airlines, flightNumber, date, departureTime,
+		return String.format("%-15s%-20s%-13s%15s\t%s-->%s%10.2f฿%15d",location.name, airlines, flightNumber, date, departureTime,
 				arivalTime, price, numOfSeats);
 
 	}
